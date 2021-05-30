@@ -1,0 +1,34 @@
+{
+  "name": "export-excel-sheet-vue-js",
+  "version": "1.0.0",
+  "description": "Export your data as an Excel Sheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "download excel sheet",
+    "excel xlsx",
+    "excel",
+    "export",
+    "json excel",
+    "download excel",
+    "vue",
+    "vue.js",
+    "export excel",
+    "xlsx",
+    "json",
+    "export"
+  ],
+  "author": "Dhanesh Pawar",
+  "license": "MIT",
+  "devDependencies": {
+    "bili": "^4.8.0",
+    "rollup-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "xlsx": "^0.14.4"
+  }
+}
