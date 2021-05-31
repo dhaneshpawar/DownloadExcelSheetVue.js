@@ -1,5 +1,5 @@
 <template>
-    <button @click="DownloadExcelFile">
+    <button @click="ExportExcelFile">
         <slot></slot>
     </button>
 </template>
@@ -9,14 +9,14 @@
     window.$ = window.jQuery = require('jquery');
 
     export default {
-        name: "export-excel-sheet-vue-js",
+        name: "ExportExcel",
 
         props: {
             columns: {
                 type: Array,
                 default: []
             },
-            rowsData: {
+            sheetData: {
                 type: Array,
                 default: []
             },
@@ -31,7 +31,7 @@
         },
 
         methods: {
-            DownloadExcelFile() {
+            ExportExcelFile() {
                 let createXLSLFormatObj = [];
                 let newXlsHeader = [];
                 let vm = this;
@@ -39,25 +39,25 @@
                     console.log("Add columns!");
                     return;
                 }
-                if (vm.rowsData.length === 0){
-                    console.log("Add rowsData!");
-                    return;
+                if (vm.sheetData.length === 0){
+                    console.log("Add sheetData!");
+                    return [];
                 }
                 $.each(vm.columns, function(index, value) {
                     newXlsHeader.push(value.label);
                 });
 
                 createXLSLFormatObj.push(newXlsHeader);
-                $.each(vm.rowsData, function(index, value) {
-                    let innerRowrowsData = [];
+                $.each(vm.sheetData, function(index, value) {
+                    let innerRowsheetData = [];
                     $.each(vm.columns, function(index, val) {
-                        if (val.rowsDataFormat && typeof val.rowsDataFormat === 'function') {
-                            innerRowrowsData.push(val.rowsDataFormat(value[val.field]));
+                        if (val.sheetDataFormat && typeof val.sheetDataFormat === 'function') {
+                            innerRowsheetData.push(val.sheetDataFormat(value[val.field]));
                         }else {
-                            innerRowrowsData.push(value[val.field]);
+                            innerRowsheetData.push(value[val.field]);
                         }
                     });
-                    createXLSLFormatObj.push(innerRowrowsData);
+                    createXLSLFormatObj.push(innerRowsheetData);
                 });
 
                 let filename = vm.filename + ".xlsx";

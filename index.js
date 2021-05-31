@@ -1,7 +1,7 @@
-import DownloadExcel from "./DownloadExcel.vue";
+import ExportExcel from "./ExportExcel.vue";
 
 export default {
     install(Vue, options) {
-        Vue.component("export-excel-sheet-vue-js", DownloadExcel);
+        Vue.component("ExportExcelSheetVueJs", require('./ExportExcel.vue'));
     }
 };
