@@ -1,6 +1,6 @@
 {
   "name": "export-excel-sheet-vue-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Export your data as an Excel Sheet",
   "main": "index.js",
   "scripts": {
